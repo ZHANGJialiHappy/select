@@ -30,11 +30,11 @@ const options=[
 ]
 
 function App() {
-  const [value, setValue] = useState(options[0])
+  const [value, setValue] = useState<typeof options[0] | undefined>(options[0])
 
   return (
     <div className="App">
-      <Select options={options} value={value}/>
+      <Select options={options} value={value} onChange={option => setValue(option)}/>
     </div>
   )
 }
