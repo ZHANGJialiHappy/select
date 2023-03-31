@@ -15,15 +15,23 @@ type SelectProps = {
 export function Select({ value, onChange, options }: SelectProps) {
     const [isOpen, setIsOpen] = useState<boolean>(false)
 
+    const clearOptions = () => {
+        onChange(undefined)
+    }
+
     return (
         <div className="flex justify-center items-center min-h-screen">
             <div tabIndex={0}
                 className="relative w-80 min-h-6 border-2 border-solid border-yellow-400 flex items-center gap-2 p-2 rounded group focus:border-yellow-200"
-                onClick={() => setIsOpen(!isOpen)}
+                onClick={() => setIsOpen(true)}
                 onBlur={() => setIsOpen(false)}
             >
                 <span className="grow">{value?.label}</span>
-                <button className="btn btn-circle btn-outline btn-warning btn-xs">
+                <button className="btn btn-circle btn-outline btn-warning btn-xs"
+                    onClick= {event=>{
+                        event.stopPropagation()
+                        clearOptions()
+                    }}>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
                 </button>
                 <div className="bg-yellow-400 group-focus:bg-yellow-200 self-stretch w-0.5"></div>
