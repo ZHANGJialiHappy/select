@@ -45,13 +45,15 @@ export function Select({ value, onChange, options }: SelectProps) {
                 <div className="bg-yellow-400 group-focus:bg-yellow-200 self-stretch w-0.5"></div>
                 <div className="translate-x-0 translate-y-1/4 border-8 border-solid border-transparent border-t-yellow-400 group-focus:border-t-yellow-200"></div>
                 <ul className={`absolute-position m-0 p-0 max-h-60 overflow-y-auto border-2 border-solid border-yellow-200 rounded w-full bg-white z-50 ${isOpen? "" : "hidden"}`}>
-                    {options.map(option => (
+                    {options.map((option) => (
                         <li onClick = {event=>{
                             event.stopPropagation();
                             selectOption(option);
                             setIsOpen(false);
                         }}
-                        key={option.label} className={`p-2 cursor-pointer ${isOptionSelected(option)? "bg-yellow-400" : ""}`}>
+                        key={option.value} 
+                        className={`p-2 cursor-pointer hover:bg-yellow-200 ${isOptionSelected(option)? "bg-yellow-400" : ""}`}
+                        >
                             {option.label}
                         </li>
                     ))}
