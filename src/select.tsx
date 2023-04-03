@@ -19,8 +19,12 @@ export function Select({ value, onChange, options }: SelectProps) {
         onChange(undefined)
     }
 
-    const selectOption = (option:SelectOption) => {
+    const selectOption = (option: SelectOption) => {
         onChange(option)
+    }
+
+    const isOptionSelected = (option: SelectOption) => {
+        return option === value;
     }
 
     return (
@@ -47,7 +51,7 @@ export function Select({ value, onChange, options }: SelectProps) {
                             selectOption(option);
                             setIsOpen(false);
                         }}
-                        key={option.label} className="px-2 py-1 cursor-pointer">
+                        key={option.label} className={`p-2 cursor-pointer ${isOptionSelected(option)? "bg-yellow-400" : ""}`}>
                             {option.label}
                         </li>
                     ))}
