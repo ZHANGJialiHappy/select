@@ -52,7 +52,7 @@ export function Select({ value, onChange, options }: SelectProps) {
                             setIsOpen(false);
                         }}
                         key={option.value} 
-                        className={`p-2 cursor-pointer hover:bg-yellow-200 ${isOptionSelected(option)? "bg-yellow-400" : ""}`}
+                        className={`${isOptionSelected(option)? "p-2 cursor-pointer bg-yellow-400" : "p-2 cursor-pointer hover:bg-yellow-200"}`}
                         >
                             {option.label}
                         </li>
