@@ -60,7 +60,7 @@ export function Select({ multiple, value, onChange, options }: SelectProps) {
                                 e.stopPropagation();
                                 selectOption(v);
                             }}
-                            className="btn btn-warning btn-sm"
+                            className="btn btn-warning btn-sm mr-1 mb-1"
                             >{v.label}
                             <span className="text-yellow-200">&times;</span>
                         </button>))
