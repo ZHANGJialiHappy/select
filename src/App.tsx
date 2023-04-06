@@ -42,7 +42,8 @@ function App() {
           multiple
           options={options}
           value={value1}
-          onChange={option => setValue1(option)} />
+            onChange={option => {
+              setValue1(option)} }/>
 
         <div className="text-2xl mb-3 mt-5">SINGLE SELECTOR</div>
         <Select

@@ -32,7 +32,7 @@ export function Select({ multiple, value, onChange, options }: SelectProps) {
     const selectOption = (option: SelectOption) => {
         if (multiple) {
             if (value?.includes(option)) {
-                onChange(value.filter(option => option !== option))
+                onChange(value.filter(value => value !== option))
             } else {
                 onChange([...value, option])
             }
@@ -60,9 +60,9 @@ export function Select({ multiple, value, onChange, options }: SelectProps) {
                                 e.stopPropagation();
                                 selectOption(v);
                             }}
-                            className="btn btn-warning btn-sm mr-1 mb-1"
+                            className="btn btn-warning btn-sm mr-1 mb-1 rounded"
                             >{v.label}
-                            <span className="text-yellow-200">&times;</span>
+                            <span className="text-yellow-200 ml-1">&times;</span>
                         </button>))
                         : 
                         value?.label}
