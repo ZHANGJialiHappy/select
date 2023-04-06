@@ -11,7 +11,7 @@
 
 ## Demo
 
-Check my application on [`gh-pages`](https://zhangjialihappy.github.io/register-form/).
+<!-- Check my application on [`gh-pages`](). -->
 
 ## Steps
 
