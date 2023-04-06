@@ -60,7 +60,7 @@ export function Select({ multiple, value, onChange, options }: SelectProps) {
                                 e.stopPropagation();
                                 selectOption(v);
                             }}
-                            className="btn btn-warning btn-sm mr-1 mb-1 rounded hover:border-yellow-200"
+                            className="btn btn-warning btn-sm mr-1 mb-1 rounded hover:border-white"
                             >{v.label}
                             <span className="text-yellow-200 ml-1">&times;</span>
                         </button>))
